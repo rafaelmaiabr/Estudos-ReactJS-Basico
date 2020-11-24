@@ -13,8 +13,37 @@
 
   </div>
   <script>
+    
+    function MeuComponente1() {
+      return (
+        React.createElement('div', {id: 'componente-1', className: 'componente-1'},
+          React.createElement(MeuComponente2)
+        )
+      )
+    }
+
+    function MeuComponente2() {
+      return React.createElement('div', {id: 'componente-2', className: 'componente-2'},
+        React.createElement(MeuComponente3)
+      )
+    }
+
+    function MeuComponente3() {
+      return React.createElement('div', {id: 'componente-3', className: 'componente-3'},
+        React.createElement(MeuComponente4)
+      )
+    }
+
+    function MeuComponente4() {
+      return React.createElement('div', {id: 'componente-4', className: 'componente-4'},
+        React.createElement('p', null, 'Componente 4')
+      )
+    }
+
     function MeuComponente() {
-      return React.createElement('h1', null, 'Olá Mundo!')
+      return React.createElement('div', {id: 'Componentes'},
+        React.createElement(MeuComponente1)
+      )
     }
 
     ReactDOM.render(
