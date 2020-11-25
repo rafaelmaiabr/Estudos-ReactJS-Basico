@@ -14,18 +14,23 @@
   </div>
   <script>
     
+    const NomeContext = React.createContext('nome');
+
     function MeuComponente1() {
       const meuNome = 'Rafael Maia';
       return (
-        React.createElement('div', {id: 'componente-1', className: 'componente-1'},
-          React.createElement(MeuComponente2, {nome: meuNome})
+        React.createElement(NomeContext.Provider, { value:meuNome },
+          React.createElement('div', {id: 'componente-1', className: 'componente-1'},
+            React.createElement(MeuComponente2, {nome: meuNome})
+          )  
         )
       )
     }
 
     function MeuComponente2(props) {
       return React.createElement('div', {id: 'componente-2', className: 'componente-2'},
-        React.createElement(MeuComponente3, { nome: props.nome })
+        //React.createElement(MeuComponente3, { nome: props.nome })
+        React.createElement(MeuComponente3) //Removida a ligação para testar ContextAPI
       )
     }
 
@@ -36,8 +41,14 @@
     }
 
     function MeuComponente4(props) {
-      return React.createElement('div', {id: 'componente-4', className: 'componente-4'},
-        React.createElement('p', null, props.nome)
+      return (
+        React.createElement(NomeContext.Consumer, null,
+          (nomeContext) => (
+            React.createElement('div', {id: 'componente-4', className: 'componente-4'},
+              React.createElement('p', null, nomeContext)
+            )
+          )
+        )
       )
     }
 
