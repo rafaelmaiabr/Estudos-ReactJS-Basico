@@ -1,0 +1,25 @@
+{
+  "name": "introducao-react",
+  "version": "1.0.0",
+  "description": "Introducao ao ReactJS",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/preset-react": "^7.12.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelmaiabr/Estudos-ReactJS-Basico.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelmaiabr/Estudos-ReactJS-Basico/issues"
+  },
+  "homepage": "https://github.com/rafaelmaiabr/Estudos-ReactJS-Basico#readme"
+}
